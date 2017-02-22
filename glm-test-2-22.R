@@ -1,3 +1,4 @@
+args = c("stool","stool.csv")
 
 # Get counts file from analysis/fname/fname.T.csv
 bname = basename(args[1]) 
