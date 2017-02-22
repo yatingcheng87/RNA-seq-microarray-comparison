@@ -1,0 +1,8 @@
+ cd /c/Users/Yating/Documents
+    cd RNA-seq-microarray-comparison/
+ 
+    git add .
+ 
+   git commit -m "add existing file"
+   git push origin
+  
