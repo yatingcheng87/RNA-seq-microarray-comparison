@@ -4,14 +4,15 @@ args = c("stool","stool.csv")
 bname = basename(args[1]) 
 fname = paste(bname,"-count.T.csv",sep='')
 dat = read.csv(file.path("analysis",bname,fname), header = TRUE, row.names=1)
+keep = rowSums(cpm(dat) > 3) >= 3
+counts = dat[keep,]
 
 
 sel = grepl("MT-.*", rownames(counts)) + grepl("ERCC-.*", rownames(counts)) + grepl("mt-.*", rownames(counts))
 
 counts = counts[!sel,]
 
-sel = grepl("MT-.*", rownames(counts)) + grepl("ERCC-.*", rownames(counts)) + grepl("mt-.*", rownames(counts))
-counts = counts[!sel,]
+
 head(counts)
 factors <- c("B", "A-tissue", "A", "B-tissue", "A", "B")
 groups <-factors
